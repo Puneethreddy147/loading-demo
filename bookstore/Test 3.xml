@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<bookstore>
+    <owner>Ram</owner>
+    <location>Florida</location>
+   <jounerelist></jounerelist>
+    <booksList>
+        <book>
+            <name>Test Book3</name>
+            <publisher>Publisher3</publisher>
+        </book>
+        
+    </booksList>
+</bookstore>
