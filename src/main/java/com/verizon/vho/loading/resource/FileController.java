@@ -1,10 +1,16 @@
 package com.verizon.vho.loading.resource;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.verizon.vho.loading.model.Bookstore;
 import com.verizon.vho.loading.service.FileHandler;
@@ -15,12 +21,14 @@ public class FileController {
 	@Autowired
 	private FileHandler fileHandlerImpl;
 
-	@GetMapping("/file-load")
-	public List<Bookstore> getBookData() throws Exception {
+	@PostMapping("/file-load")
+	public List<Bookstore> getBookData(@RequestParam("files") List<MultipartFile> files) throws Exception {
 
 		System.out.println("Inside Book Data Controller");
-
-		List<Bookstore> bookStore = fileHandlerImpl.readMultipleFIles();
+		
+		
+		List<Bookstore> bookStore = fileHandlerImpl.setBookStoreDate(files);
+		
 		return bookStore;
 
 	}

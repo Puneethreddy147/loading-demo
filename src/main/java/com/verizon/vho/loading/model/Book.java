@@ -7,7 +7,6 @@ public class Book {
 
 	private String name;
 	private String publisher;
-	
 
 	public Book() {
 
@@ -33,8 +32,5 @@ public class Book {
 	public String toString() {
 		return "Book [name=" + name + ", publisher=" + publisher + "]";
 	}
-
-	
-
 
 }
