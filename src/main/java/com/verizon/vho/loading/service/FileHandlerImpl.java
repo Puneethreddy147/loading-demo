@@ -27,7 +27,7 @@ import com.verizon.vho.loading.repo.StatusRepo;
 
 @Service
 public class FileHandlerImpl implements FileHandler {
-	
+
 	@Autowired
 	StatusRepo repo;
 
@@ -62,7 +62,7 @@ public class FileHandlerImpl implements FileHandler {
 		status.setStatus(response);
 		status.setCreatedBy("userId");
 		status.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-		
+
 		repo.save(status);
 
 	}

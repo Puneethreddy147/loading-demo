@@ -22,13 +22,12 @@ public class FileController {
 	private FileHandler fileHandlerImpl;
 
 	@PostMapping("/file-load")
-	public List<Bookstore> getBookData(@RequestParam("files") List<MultipartFile> files) throws Exception {
+	public Bookstore getBookData(@RequestParam("files") MultipartFile file) throws Exception {
 
 		System.out.println("Inside Book Data Controller");
-		
-		
-		List<Bookstore> bookStore = fileHandlerImpl.setBookStoreDate(files);
-		
+
+		Bookstore bookStore = fileHandlerImpl.readFIle(file);
+
 		return bookStore;
 
 	}
